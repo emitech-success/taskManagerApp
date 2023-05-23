@@ -1,0 +1,146 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+  font-style: normal;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #F5F5F5;
+}
+.task_app_wrapper{
+  width: 100%;
+}
+.task_app_wrapper h2{
+  margin-top: 1rem;
+  color: #E9C597;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 30px;
+  text-align: center;
+  padding-top: 2rem;
+}
+.task_container{
+  position: relative;
+  background: #54BAB9;
+  min-height: 250px;
+  border-radius: 10px;
+  border-bottom: 5px solid #38938A;
+  border-top-right-radius: 10px;
+}
+#task_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #54BAB9;
+  border-bottom: 1px solid #E4E4E4;
+  padding: 10px;
+  
+}
+.modal_form{
+  margin: 0rem auto 0rem auto;
+  background: #54BAB9;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  width: 400px;
+  color: #FFFFFF;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 4px solid #38938A;
+}
+input[type=text]{
+  margin: 0.5rem;
+  width: 350px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.add-btn{
+  background: #FFFFFF;
+  border: 2px solid #38938A;
+  border-radius: 10px;
+  width: 175px;
+  height: 35px;
+  cursor: pointer;
+  color: rgba(56, 147, 138, 1);
+}
+  
+.edit-btn{
+  background: dodgerblue;
+  border: 2px solid #38938A;
+  border-radius: 10px;
+  width: 175px;
+  height: 35px;
+  cursor: pointer;
+  color: white;
+}
+.action-btn{
+  margin: 0px 5px;
+  width: 2rem;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+} 
+.item_check{
+  background: #4CAF50;
+  color: #ffffff;
+  padding: 5px;
+}
+.item_delete{
+  background: #FFFFFF;
+  color: red;
+  border: 2px solid #FFFFFF;
+  font-size: 15px;
+  padding: 2px;
+}
+.item_edit{
+  background: #38938A;
+  color: red;
+  border: 2px solid #E9C597;
+  font-size: 15px;
+  padding: 2px;
+}
+
+.task_text{
+  color: #E4E4E4;
+}
+.task_title{
+  color: #f7f9f9;
+  font-size: 20px;
+  font-weight: 600;
+}
+  
+
+  
+.completed{
+  text-decoration: line-through;
+}
+
+button[type=submit]{
+  background: #FFFFFF;
+  border: 2px solid #38938A;
+  border-radius: 10px;
+  width: 175px;
+  height: 35px;
+  cursor: pointer;
+  color: rgba(56, 147, 138, 1);
+}
+@media screen and (max-width: 560px){
+  .task_app_wrapper h2{
+    margin-top: 0rem;
+    padding-top: 0rem;
+  }
+}
