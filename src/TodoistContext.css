@@ -121,10 +121,7 @@ input[type=text]{
   color: #f7f9f9;
   font-size: 20px;
   font-weight: 600;
-}
-  
-
-  
+}   
 .completed{
   text-decoration: line-through;
 }
@@ -138,9 +135,32 @@ button[type=submit]{
   cursor: pointer;
   color: rgba(56, 147, 138, 1);
 }
+
+@media screen and (max-width: 769px){
+  body{
+    margin-top: -6rem;
+    align-items: center;
+    height: 100vh;
+    background: #F5F5F5;
+  }
+}
 @media screen and (max-width: 560px){
+  .task_app_wrapper{
+    width: 98%;
+    margin: 0rem auto;
+  }
   .task_app_wrapper h2{
-    margin-top: 0rem;
-    padding-top: 0rem;
+    margin-bottom: 1rem;
+    padding: 0rem;
+  }
+  .task_container{
+    min-height: 320px;
+  }
+  .modal_form{
+    margin: 0rem auto 0rem auto;
+    width: 350px;
+  }
+  input[type=text]{
+    width: 300px;
   }
 }

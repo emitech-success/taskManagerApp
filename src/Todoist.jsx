@@ -15,18 +15,27 @@ export const Todoist = () => {
 
   const { addTodo, todos, toggleTodoComplete, deleteTodo, updateTodo } =
     useContext(TodoContext);
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      if (title.trim() !== "") {
+        // const handleAddTodo = () => {
+          const newTodo = {
+            id: uuidv4(),
+            title: title,
+            description: description,
+            isCompleted: false,
+          };
+          // handleAddTodo()
+          addTodo(newTodo);
+          setTitle("");
+          setDescription("");
+        // };
+      }
+    }
 
-  const handleAddTodo = () => {
-    const newTodo = {
-      id: uuidv4(),
-      title: title,
-      description: description,
-      isCompleted: false,
-    };
-    addTodo(newTodo);
-    setTitle("");
-    setDescription("");
-  };
+   
+
+  
 
   const handleEditMode = (todoObject) => {
     setIsEditMode(true);
@@ -49,6 +58,7 @@ export const Todoist = () => {
         PERSONAL <br /> TASK MANAGER
       </h2>
       {isEditMode ? (
+        
         <section className="modal_form">
           <input
             type="text"
@@ -62,30 +72,37 @@ export const Todoist = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <button className="edit-btn" onClick={handleUpdateTodo}>
+          <button className="edit-btn" 
+          onClick={handleUpdateTodo}
+          >
             {" "}
             Update Task
           </button>
         </section>
+        
       ) : (
-        <section className="modal_form">
-          <input
-            type="text"
-            placeholder="Enter todo title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Task Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <button className="add-btn" onClick={handleAddTodo}>
-            {" "}
-            Add Todo
-          </button>
-        </section>
+        <form onSubmit={handleSubmit}>
+          <section className="modal_form">
+            <input
+              type="text"
+              placeholder="Enter todo title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Task Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <button className="add-btn" 
+            // onClick={handleAddTodo}
+            >
+              {" "}
+              Add Todo
+            </button>
+          </section>
+        </form>
       )}
 
       <section>
@@ -94,7 +111,11 @@ export const Todoist = () => {
             const { isCompleted, id, title, description } = todo;
 
             return (
-              <div className={isCompleted ? "completed" : null} key={id} id="task_item">
+              <div
+                className={isCompleted ? "completed" : null}
+                key={id}
+                id="task_item"
+              >
                 <div>
                   <p>
                     {" "}
@@ -119,8 +140,11 @@ export const Todoist = () => {
                     ✍
                   </button>
                   {/* delete button */}
-                  <button className="action-btn item_delete" onClick={() => deleteTodo(id)}>
-                  ❌
+                  <button
+                    className="action-btn item_delete"
+                    onClick={() => deleteTodo(id)}
+                  >
+                    ❌
                   </button>
                 </div>
               </div>
